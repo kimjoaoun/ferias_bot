@@ -1,13 +1,13 @@
 library(stringr) #pacote para manipulação de strings
 library(rtweet) # pacote que faz o tweet
 
-#---- Fix
+#---- Corrige um bug do rtweet que o impede de tuitar ----
 is_tweet_length <- function(.x, n = 280) {
   .x <- gsub("https?://[[:graph:]]+\\s?", "", .x)
   while (grepl("^@\\S+\\s+", .x)) {
     .x <- sub("^@\\S+\\s+", "", .x)
   }
-  !(nchar(.x) <= n)   # here's the fix
+  !(nchar(.x) <= n)   
 }
 
 
@@ -30,6 +30,7 @@ token <- create_token(
 get_token()
 
 # O REPEAT cria um loop que é infinito caso não encontre um 'break' no meio do código, a nossa ideia é que realmente fique infinitamente
+
 repeat{
   #---- Bot Things ----
   
