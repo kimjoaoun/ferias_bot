@@ -45,22 +45,22 @@ repeat{
   dias_faltantes_uff = fim_aulas_uff - Sys.Date()
   
   #---- Escreve o tweet ----
-  tweets = str_c("O ano letivo na PUC-Rio acaba em: ", format(fim_aulas_puc, "%d/%m/%Y"), ". Faltam: ", dias_faltantes_puc, " dias. ", "| Na UFRJ o ano letivo acaba em: ", format(fim_aulas_ufrj, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_ufrj, " dias. ", "VAMO LÁ PORRA, JÁ TA ACABANDO!!!")
-  tweets_2 = str_c("O ano letivo na UERJ acaba em: ", format(fim_aulas_uerj, "%d/%m/%Y"), ". Faltam: ", dias_faltantes_uerj, " dias. ", "| Na UFF o ano letivo acaba em: ", format(fim_aulas_uff, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_uff, " dias.", " VAMO LÁ PORRA, JÁ TA ACABANDO!!!")
-  
-  #---- Caso você queira um tweet para cada universidade  ----
-  
-  # tweet_puc = str_c("O ano letivo na PUC acaba em: ", format(fim_aulas_puc, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_puc ," dias, vamos lá porra, já ta acabando!!!")
-  # tweet_ufrj = str_c("O ano letivo na UFRJ acaba em: ", format(fim_aulas_ufrj, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_ufrj ," dias, vamos lá porra, já ta acabando!!!")
-  
+  tweets = str_c("O ano letivo na PUC-Rio acaba em: ", format(fim_aulas_puc, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_puc, " dias. ", "VAMO LÁ PORRA, JÁ TA ACABANDO!!!")
+  tweets_2 = str_c("O ano letivo na UERJ acaba em: ", format(fim_aulas_uerj, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_uerj, " dias. ", " VAMO LÁ PORRA, DIAS MELHORES VIRÃO!!!")
+  tweets_3 = str_c("O ano letivo na UFF acaba em: ", format(fim_aulas_uff, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_uff, " dias.", " AGUENTA VAI, JÁ TA ACABANDO!!!")
+  tweets_4 = str_c("o ano letivo na UFRJ acaba em: ", format(fim_aulas_ufrj, "%d/%m/%Y"), ". Faltam só ", dias_faltantes_ufrj, " dias. ", "DALE DALE, JÁ TA ACABANDO!!!")
+ 
   #---- Tuita! ----
   post_tweet(tweets)
-  
-  Sys.sleep('120')
-  
+  Sys.sleep("10") #aguarda 10 segundos
   post_tweet(tweets_2)
-
+  Sys.sleep("10") #aguarda 10 segundos
+  post_tweet(tweets_3)
+  Sys.sleep("10") #aguarda 10 segundos
+  Sys.sleep(tweets_4)
+  
   #---- Aguarda por 86400 segundos == 1 dia ----
   Sys.sleep("86400")
   
 }
+
