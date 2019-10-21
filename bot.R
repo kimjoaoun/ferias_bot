@@ -21,7 +21,7 @@ token_1 = "ACCESS TOKEN AQUI"
 token_2 = "ACCESS SECRET AQUI"
 
 token <- create_token(
-  app = "feriasbot",
+  app = "feriasbot", # coloque aqui o nome do app criado no developers.twitter.com
   consumer_key = consumer_key,
   consumer_secret = consumer_secret,
   access_token = token_1,
